@@ -1,0 +1,213 @@
+body {
+  color: black;
+  background-color: white;
+  max-width: 100%;
+  margin: 0px;
+  line-height: 1.4285;
+  display: block;
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  max-height: none;
+  padding: 20px;
+  max-width: 50%;
+  height: 5%;
+  margin-left: 400px;
+  text-align: left;
+  display: flex;
+  border-style: solid;
+  border-color: whitesmoke;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  padding: 16px;
+}
+.date {
+  font-size: 13px;
+  font-family: Helvetica;
+}
+
+.user-text {
+  font-size: 14px;
+}
+
+.summary {
+  font-size: 16px;
+  font-style: normal;
+}
+
+.review-text-portion {
+  flex: 2;
+}
+
+.review-breakdown {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+
+}
+.overview {
+  display: inline-flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  font-size: 14px;
+  text-align: left;
+}
+
+.overview-inner {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 150px;
+  text-align: left;
+}
+.text {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+
+.helpsection {
+  flex: 1;
+ display: block;
+ font-size: 12px;
+}
+
+.help {
+  padding-left: 0px;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.helpButton {
+  width: 100px;
+  margin-right: 20px;
+  border-style: solid;
+  border-color: rgb(136 136 136);
+  background-color: white;
+  color:black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.helpButton:hover {
+  background-color: gray;
+}
+.helpButton:visited {
+  background-color: black;
+  color: white;
+}
+
+.helpButton2 {
+  width: 100px;
+  margin-left: 20px;
+  border-style: solid;
+  border-color: rgb(136 136 136);
+  background-color: white;
+  color:black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+}
+
+.filterBar {
+  display: flex;
+  margin-left: 400px;
+  height: 100px;
+  max-width: 52%;
+  background-color: rgb(247, 247, 247);
+}
+
+.filter-stars{
+  display: block;
+  text-align: left;
+  font-size: 17px;
+  margin-top: 25px;
+  margin-left: 25px;
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  border-width: 2px;
+  height: 45px;
+  width: 25%;
+}
+
+.makeBold {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.dropdown-date {
+
+  text-align: left;
+  font-size: 17px;
+  margin: 25px;
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  height: 45px;
+  width: 25%;
+}
+
+.clear-filter-button {
+  margin-left: 25px;
+  margin-top: 40px;
+  height: 20px;
+
+
+}
+
+
+
+.Overview {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.overview-header {
+  font-size: 23px;
+}
+
+.howManyReviewsText {
+  font-style: normal;
+  font-family: Helvetica;
+  font-size: 15px;
+  margin-left: 435px;
+  margin-top: 12px;
+}
+
+.progress-bar {
+  position: relative;
+  height: 10px;
+  width: 30px;
+  border-radius: 50px;
+  border: 1px solid #333;
+}
+
+.filler {
+  background: green;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in;
+}
