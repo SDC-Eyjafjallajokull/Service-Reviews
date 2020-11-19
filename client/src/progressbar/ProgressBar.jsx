@@ -1,11 +1,13 @@
 import React from 'react'
-import Filler from './Filler.jsx';
 
 
-export default const ProgressBar = (props) => {
+
+export default function ProgressBar (props) {
   return (
     <div className='progress-bar'>
-      <Filler />
+      <span className="progress-bar-star">{props.star} stars</span>
+      <progress value={props.percent} max='100'></progress>
+      <span className='progress-bar-percent'>{props.percent}%</span>
     </div>
   )
 }

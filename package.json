@@ -26,7 +26,8 @@
     "react-circle": "^1.1.1",
     "react-circular-progressbar": "^2.0.3",
     "react-dom": "^17.0.1",
-    "react-select": "^3.1.0"
+    "react-select": "^3.1.0",
+    "react-star-rating-component": "^1.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

@@ -16,11 +16,13 @@ export default class App extends React.Component {
       fourStarPercent: 0,
       threeStarPercent: 0,
       twoStarPercent: 0,
-      oneStarPercent: 0
+      oneStarPercent: 0,
+      recommendations: 0
     }
     this.getReviews = this.getReviews.bind(this);
     this.filterReviews = this.filterReviews.bind(this);
     this.getPercentagesForStars = this.getPercentagesForStars.bind(this);
+    this.getNumberOfRecommended = this.getNumberOfRecommended.bind(this);
   }
 
 
@@ -47,23 +49,24 @@ export default class App extends React.Component {
 
   getPercentagesForStars() {
     var obj = {total: 0}
-    // this.state.reviews.forEach((review) => {
-    //   if (review.stars === 0) {
-    //     continue
-    //   } else if (obj[review.stars] === undefined) {
-    //     obj[review.stars] = review.stars
-    //     obj.total++
-    //   } else {
-    //     obj[review.stars]++;
-    //     obj.total++
-    //   }
-    // });
+    this.state.reviews.forEach((review) => {
+      if (review.stars === 0) {
+        console.log(0);
+      } else if (obj[review.stars] === undefined) {
+        obj[review.stars] = 1;
+        obj.total++
+      } else {
+        obj[review.stars]++;
+        obj.total++
+      }
+    });
+    console.log(obj);
     this.setState({
-      fiveStarPercent: obj[5]/obj.total * 100,
-      fourStarPercent: obj[4]/obj.total * 100,
-      threeStarPercent: obj[3]/obj.total * 100,
-      twoStarPercent: obj[2]/obj.total * 100,
-      oneStarPercent: obj[1]/obj.total * 100,
+      fiveStarPercent: Math.round(obj[5]/obj.total * 100),
+      fourStarPercent: Math.round(obj[4]/obj.total * 100),
+      threeStarPercent: Math.round(obj[3]/obj.total * 100),
+      twoStarPercent: Math.round(obj[2]/obj.total * 100),
+      oneStarPercent: Math.round(obj[1]/obj.total * 100)
     })
   }
 
@@ -72,12 +75,25 @@ export default class App extends React.Component {
     .then(() => {
       this.getPercentagesForStars();
     })
+    .then(() => {
+      this.getNumberOfRecommended();
+    })
   };
+
+  getNumberOfRecommended() {
+    var count = 0;
+    this.state.reviews.forEach((review) => {
+      if (review.ratings.recommended) {
+        count++;
+      }
+    });
+    this.setState({recommendations: count});
+  }
 
   render() {
     return (
       <div>
-        <Overview />
+        <Overview copyOfState={this.state}/>
         <Filter reviews={this.state.reviews} filterReviews={this.filterReviews} reset={this.getReviews}/>
         <div className='howManyReviewsText'>We found {this.state.reviews.length} matching reviews</div>
         <ReviewList reviews={this.state.reviews} className="ReviewList"/>

@@ -1,12 +1,17 @@
-body {
+#app {
   color: black;
   background-color: white;
   max-width: 100%;
-  margin: 0px;
+  width: auto;
+  margin: 0 auto;
   line-height: 1.4285;
   display: block;
   font-family: Helvetica;
-  font-size: 16px;
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid
 }
 
 .review {
@@ -130,6 +135,7 @@ body {
 
 .filterBar {
   display: flex;
+  justify-content: left;
   margin-left: 400px;
   height: 100px;
   max-width: 52%;
@@ -178,15 +184,16 @@ body {
 
 
 .Overview {
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding-left: 16px;
-  padding-right: 16px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .overview-header {
   font-size: 23px;
+  text-align: center;
 }
 
 .howManyReviewsText {
@@ -196,18 +203,103 @@ body {
   margin-left: 435px;
   margin-top: 12px;
 }
-
 .progress-bar {
-  position: relative;
-  height: 10px;
-  width: 30px;
-  border-radius: 50px;
-  border: 1px solid #333;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+.progress-bar-star {
+  font-size: 13px;
+  padding: 0px;
+  margin-right: 10px;
 }
 
-.filler {
-  background: green;
-  height: 100%;
-  border-radius: inherit;
-  transition: width .2s ease-in;
+.progress-bar-percent {
+  margin-top: 2px;
+  font-size: 13px;
+  margin-left: 13px;
+}
+progress{
+  -webkit-appearance: none;
+}
+progress::-webkit-progress-bar {
+  background-color: lightgray;
+  height: 10px;
+  border-radius: 20px;
+
+}
+progress::-webkit-progress-value {
+  border-radius: 20px;
+  background-color:green;
+  margin-top: 5px;
+}
+
+.progress-bar-container {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.ratings-breakdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  padding-right: 10em;
+}
+
+.ratings-breakdown-inner {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: inherit;
+  width: 150px;
+  text-align: left;
+}
+
+.main-circle {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+  width: 100%;
+}
+.breakdown-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+
+  width: auto;
+}
+.overview-star-container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+.starBox {
+  display: inline;
+}
+.main-star {
+  font-size: 25px;
+  flex: 1;
+
+}
+.mainStarText {
+  display: inline-block;
+}
+
+.overall-star-rating {
+  flex: 5;
+  font-size: 40px;
+  font-weight: bold;
+  box-sizing: content-box;
+  outline: 0px;
 }

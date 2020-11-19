@@ -14,7 +14,7 @@ export default class ReviewList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='ReviewList'>
         {this.props.reviews.map((review) => {
           return <Review review={review} key={review._id}/>
         })}

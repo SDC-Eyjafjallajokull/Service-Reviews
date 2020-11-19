@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import Circle from './Circle.jsx';
+import Star from 'react-star-rating-Component'
 
 export default class Review extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ export default class Review extends React.Component {
     this.state = {
       helpCount: this.props.review.helpfulCount,
       buttonDisable: false,
-      buttonColor: 'white'
+      buttonColor: 'white',
+      isRecommended: this.props.review.ratings.recommended
     }
     this.changeHelpCount = this.changeHelpCount.bind(this);
   }
@@ -37,7 +39,7 @@ export default class Review extends React.Component {
       <div className="review">
         <div className="review-text-portion">
           <h3 className="summary">{this.props.review.summary}</h3>
-          <div>{this.props.review.stars}</div>
+          <Star name='star' value={this.props.review.stars} emptyStarColor='white'/>
           <div className="date">{this.props.review.user} - {this.props.review.dateCreated.slice(0, 10)}</div>
           <p className="user-text">{this.props.review.text}</p>
         </div>
