@@ -20,7 +20,7 @@
   max-height: none;
   padding: 20px;
   max-width: 50%;
-  height: 5%;
+  height: 75%;
   margin-left: 400px;
   text-align: left;
   display: flex;
@@ -30,6 +30,7 @@
   margin-bottom: 15px;
   position: relative;
   padding: 16px;
+  overflow: auto;
 }
 .date {
   display: flex;
@@ -335,3 +336,116 @@ progress::-webkit-progress-value {
   padding-left: 15px;
   transform: translateX(62.6em)
 }
+.login-modal {
+  display: inherit;
+}
+
+.write-button {
+  background-color: rgb(204, 0, 0);
+  border-color: rgb(204, 0, 0);
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  font-size: 12px;
+  font-family: Helvetica;
+  margin-right: 60px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 14px;
+  border-width: 5px;
+  margin-bottom: 20px;
+}
+
+.login {
+  position: sticky;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.login-text {
+  font-size: 23px;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+.login-info {
+  display: flex;
+  flex-direction: column
+}
+.login-user {
+    padding-left: 4px;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: rgb(136, 136, 136);
+    border-style: solid;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.login-password {
+    padding-left: 4px;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: rgb(136, 136, 136);
+    border-style: solid;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.login-button-signIn {
+    height: 56px;
+    width: 100%;
+    font-size: 23px;
+    color: white;
+    background: rgb(204, 0, 0);
+    border-color: rgb(204, 0, 0);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.login-forgotPassword {
+  color: rgb(102, 102, 102);
+  font-family: Helvetica;
+  text-decoration: underline;
+  border-bottom: rgb(102, 102, 102);
+}
+.login-button-account {
+  height: 56px;
+  width: 30em;
+  color: black;
+  background: white;
+  border-color: rgb(102, 102, 102);
+  border-style: solid;
+  border-width: 1px;
+  font-family: Helvetica;
+  font-size: 19px;
+}
+.ReactModal__Content {
+  text-align: center;
+  width: 95%;
+  height: 75%;
+  padding: 10;
+  left: 0px;
+  right: 0px;
+
+
+}
+.bullseye {
+  display: inherit;
+  text-align: center;
+  height: 10px;
+  width: 10px;
+  padding: 10px;
+  border: solid 10px #c00;
+  border-radius: 50%;
+  background-color: #c00;
+  background-clip: content-box;
+  transition: border-color 200ms ease-in, background-color 200ms ease-in;
+}
+
+
+
+
+

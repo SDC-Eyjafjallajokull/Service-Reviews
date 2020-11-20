@@ -1,8 +1,9 @@
 import React from 'react';
 import Circle from './Circle.jsx';
 import ProgressBar from '../progressbar/ProgressBar.jsx';
-import MainCircle from './MainCircle.jsx'
-import Star from 'react-star-rating-Component'
+import MainCircle from './MainCircle.jsx';
+import Star from 'react-star-rating-Component';
+import LoginModal from './LoginModal.jsx';
 
 
 export default class Overview extends React.Component {
@@ -73,8 +74,9 @@ export default class Overview extends React.Component {
             <Circle rating={this.props.copyOfState.ratings.lastingQuality} className='circle'/><text className="text">Lasting Quality out of 5</text>
           </div>
 
-        </div>
 
+        </div>
+        <LoginModal></LoginModal>
       </div>
     )
   }

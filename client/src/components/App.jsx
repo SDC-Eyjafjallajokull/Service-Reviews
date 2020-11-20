@@ -5,6 +5,7 @@ import Filter from './Filter.jsx';
 import Overview from './Overview.jsx';
 
 
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -17,12 +18,14 @@ export default class App extends React.Component {
       threeStarPercent: 0,
       twoStarPercent: 0,
       oneStarPercent: 0,
-      recommendations: 0
+      recommendations: 0,
+      modalIsOpen: false
     }
     this.getReviews = this.getReviews.bind(this);
     this.filterReviews = this.filterReviews.bind(this);
     this.getPercentagesForStars = this.getPercentagesForStars.bind(this);
     this.getNumberOfRecommended = this.getNumberOfRecommended.bind(this);
+
   }
 
 
@@ -90,14 +93,19 @@ export default class App extends React.Component {
     this.setState({recommendations: count});
   }
 
+
+
   render() {
     return (
       <div>
+
         <Overview copyOfState={this.state}/>
         <Filter reviews={this.state.reviews} filterReviews={this.filterReviews} reset={this.getReviews}/>
         <div className='howManyReviewsText'>We found {this.state.reviews.length} matching reviews</div>
         <ReviewList reviews={this.state.reviews} className="ReviewList"/>
+
       </div>
+
     )
   }
 }
