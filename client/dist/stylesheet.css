@@ -1,0 +1,451 @@
+#app {
+  color: black;
+  background-color: white;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+  line-height: 1.4285;
+  display: block;
+  font-family: Helvetica;
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  max-height: none;
+  padding: 20px;
+  max-width: 50%;
+  height: 75%;
+  margin-left: 400px;
+  text-align: left;
+  display: flex;
+  border-style: solid;
+  border-color: whitesmoke;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  padding: 16px;
+  overflow: auto;
+}
+.date {
+  display: flex;
+  font-size: 13px;
+  font-family: Helvetica;
+}
+
+.user-text {
+  font-size: 14px;
+}
+
+.summary {
+  font-size: 16px;
+  font-style: normal;
+}
+
+.review-text-portion {
+  flex: 2;
+}
+
+.review-breakdown {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+
+}
+.overview {
+  display: inline-flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  font-size: 14px;
+  text-align: left;
+}
+
+.overview-inner {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 150px;
+  text-align: left;
+}
+.text {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+
+.helpsection {
+  flex: 1;
+ display: block;
+ font-size: 12px;
+}
+
+.help {
+  padding-left: 0px;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.helpButton {
+  width: 100px;
+  margin-right: 20px;
+  border-style: solid;
+  border-color: rgb(136 136 136);
+  background-color: white;
+  color:black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.helpButton:hover {
+  background-color: gray;
+}
+.helpButton:visited {
+  background-color: black;
+  color: white;
+}
+
+.helpButton2 {
+  width: 100px;
+  margin-left: 20px;
+  border-style: solid;
+  border-color: rgb(136 136 136);
+  background-color: white;
+  color:black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: left;
+  margin-left: 400px;
+  height: 100px;
+  max-width: 52%;
+  background-color: rgb(247, 247, 247);
+}
+
+.filter-stars{
+  display: block;
+  text-align: left;
+  font-size: 17px;
+  margin-top: 25px;
+  margin-left: 25px;
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  border-width: 2px;
+  height: 45px;
+  width: 25%;
+}
+
+.makeBold {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.dropdown-date {
+
+  text-align: left;
+  font-size: 17px;
+  margin: 25px;
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(136, 136, 136);
+  height: 45px;
+  width: 25%;
+}
+
+.clear-filter-button {
+  margin-left: 25px;
+  margin-top: 40px;
+  height: 20px;
+
+
+}
+
+
+
+.Overview {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview-header {
+  font-size: 23px;
+  text-align: center;
+  padding-right: 4em;
+}
+
+.howManyReviewsText {
+  font-style: normal;
+  font-family: Helvetica;
+  font-size: 15px;
+  margin-left: 435px;
+  margin-top: 12px;
+}
+.progress-bar {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+.progress-bar-star {
+  font-size: 13px;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+.progress-bar-percent {
+  margin-top: 2px;
+  font-size: 13px;
+  margin-left: 13px;
+}
+progress{
+  -webkit-appearance: none;
+}
+progress::-webkit-progress-bar {
+  background-color: lightgray;
+  height: 10px;
+  border-radius: 20px;
+
+}
+progress::-webkit-progress-value {
+  border-radius: 20px;
+  background-color:green;
+  margin-top: 5px;
+}
+
+.progress-bar-container {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.ratings-breakdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  padding-right: 10em;
+}
+
+.ratings-breakdown-inner {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: inherit;
+  width: 150px;
+  text-align: left;
+}
+
+.main-circle {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 14px;
+  padding-top: 10px;
+  width: 100%;
+}
+.breakdown-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+
+  width: auto;
+}
+.overview-star-container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  transform: translate(-50px);
+}
+.starBox {
+  display: inline;
+}
+.main-star {
+  font-size: 25px;
+  flex: 1;
+
+}
+.mainStarText {
+  display: inline-block;
+}
+
+.overall-star-rating {
+  flex: 5;
+  font-size: 40px;
+  font-weight: bold;
+  box-sizing: content-box;
+  outline: 0px;
+}
+
+.recommend {
+  display: flex;
+  padding-left: 10px;
+}
+.recommend-text {
+  padding-left: 5px;
+}
+.redCircle {
+  font-size: 18px;
+  animation: ease-in;
+  animation-delay: 5s;
+}
+
+.moreReviewsButton {
+
+  margin-right: 20px;
+  border-style: solid;
+  border-color: rgb(136 136 136);
+  background-color: white;
+  color:black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+  transform: translateX(62.6em)
+}
+.login-modal {
+  display: inherit;
+}
+
+.write-button {
+  background-color: rgb(204, 0, 0);
+  border-color: rgb(204, 0, 0);
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  font-size: 12px;
+  font-family: Helvetica;
+  margin-right: 60px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 14px;
+  border-width: 5px;
+  margin-bottom: 20px;
+}
+
+.login {
+  position: sticky;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.login-text {
+  font-size: 23px;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+.login-info {
+  display: flex;
+  flex-direction: column
+}
+.login-user {
+    padding-left: 4px;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: rgb(136, 136, 136);
+    border-style: solid;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.login-password {
+    padding-left: 4px;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: rgb(136, 136, 136);
+    border-style: solid;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.login-button-signIn {
+    height: 56px;
+    width: 100%;
+    font-size: 23px;
+    color: white;
+    background: rgb(204, 0, 0);
+    border-color: rgb(204, 0, 0);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.login-forgotPassword {
+  color: rgb(102, 102, 102);
+  font-family: Helvetica;
+  text-decoration: underline;
+  border-bottom: rgb(102, 102, 102);
+}
+.login-button-account {
+  height: 56px;
+  width: 30em;
+  color: black;
+  background: white;
+  border-color: rgb(102, 102, 102);
+  border-style: solid;
+  border-width: 1px;
+  font-family: Helvetica;
+  font-size: 19px;
+}
+.ReactModal__Content {
+  text-align: center;
+  width: 95%;
+  height: 75%;
+  padding: 10;
+  left: 0px;
+  right: 0px;
+
+
+}
+.bullseye {
+  display: inherit;
+  text-align: center;
+  height: 10px;
+  width: 10px;
+  padding: 10px;
+  border: solid 10px #c00;
+  border-radius: 50%;
+  background-color: #c00;
+  background-clip: content-box;
+  transition: border-color 200ms ease-in, background-color 200ms ease-in;
+}
+
+
+
+
+
