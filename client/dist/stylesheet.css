@@ -32,6 +32,7 @@
   padding: 16px;
 }
 .date {
+  display: flex;
   font-size: 13px;
   font-family: Helvetica;
 }
@@ -194,6 +195,7 @@
 .overview-header {
   font-size: 23px;
   text-align: center;
+  padding-right: 4em;
 }
 
 .howManyReviewsText {
@@ -283,6 +285,7 @@ progress::-webkit-progress-value {
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
+  transform: translate(-50px);
 }
 .starBox {
   display: inline;
@@ -302,4 +305,33 @@ progress::-webkit-progress-value {
   font-weight: bold;
   box-sizing: content-box;
   outline: 0px;
+}
+
+.recommend {
+  display: flex;
+  padding-left: 10px;
+}
+.recommend-text {
+  padding-left: 5px;
+}
+.redCircle {
+  font-size: 18px;
+  animation: ease-in;
+  animation-delay: 5s;
+}
+
+.moreReviewsButton {
+
+  margin-right: 20px;
+  border-style: solid;
+  border-color: rgb(136 136 136);
+  background-color: white;
+  color:black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+  transform: translateX(62.6em)
 }

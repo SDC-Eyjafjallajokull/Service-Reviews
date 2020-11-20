@@ -27,7 +27,7 @@ export default class App extends React.Component {
 
 
   getReviews() {
-    return axios.get('api/products/5faed4ff9bac92157aba56f4')
+    return axios.get('api/products/5faed4ff9bac92157aba56e2')
     .then((product) => {
 
       this.setState({
@@ -62,11 +62,11 @@ export default class App extends React.Component {
     });
     console.log(obj);
     this.setState({
-      fiveStarPercent: Math.round(obj[5]/obj.total * 100),
-      fourStarPercent: Math.round(obj[4]/obj.total * 100),
-      threeStarPercent: Math.round(obj[3]/obj.total * 100),
-      twoStarPercent: Math.round(obj[2]/obj.total * 100),
-      oneStarPercent: Math.round(obj[1]/obj.total * 100)
+      fiveStarPercent: (obj[5]/obj.total * 100).toFixed(1),
+      fourStarPercent: (obj[4]/obj.total * 100).toFixed(1),
+      threeStarPercent: (obj[3]/obj.total * 100).toFixed(1),
+      twoStarPercent: (obj[2]/obj.total * 100).toFixed(1),
+      oneStarPercent: (obj[1]/obj.total * 100).toFixed(1)
     })
   }
 

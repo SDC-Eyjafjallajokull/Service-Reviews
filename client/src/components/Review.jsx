@@ -3,6 +3,7 @@ import axios from 'axios';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import Circle from './Circle.jsx';
 import Star from 'react-star-rating-Component'
+import Recommended from './Recommend.jsx';
 
 export default class Review extends React.Component {
   constructor(props) {
@@ -11,9 +12,11 @@ export default class Review extends React.Component {
       helpCount: this.props.review.helpfulCount,
       buttonDisable: false,
       buttonColor: 'white',
+      button2Color: 'white',
       isRecommended: this.props.review.ratings.recommended
     }
     this.changeHelpCount = this.changeHelpCount.bind(this);
+    this.changeNotHelpfulButton = this.changeNotHelpfulButton.bind(this);
   }
 
   changeHelpCount(e) {
@@ -34,13 +37,21 @@ export default class Review extends React.Component {
 
   }
 
+  changeNotHelpfulButton(e) {
+    e.preventDefault();
+    this.setState({
+      button2Color: 'gray',
+      buttonDisable: true
+    });
+  }
+
   render() {
     return (
       <div className="review">
         <div className="review-text-portion">
           <h3 className="summary">{this.props.review.summary}</h3>
           <Star name='star' value={this.props.review.stars} emptyStarColor='white'/>
-          <div className="date">{this.props.review.user} - {this.props.review.dateCreated.slice(0, 10)}</div>
+          <div className="date">{this.props.review.user} - {this.props.review.dateCreated.slice(0, 10)} | <Recommended isRecommended ={this.props.review.ratings.recommended}/> </div>
           <p className="user-text">{this.props.review.text}</p>
         </div>
 
@@ -70,7 +81,7 @@ export default class Review extends React.Component {
             </div>
 
             <div className="buttons">
-              <button onClick={this.changeHelpCount} className="helpButton" disabled={this.state.buttonDisable} style={{backgroundColor: this.state.buttonColor}}>Helpful</button><button className="helpButton2" disabled={this.state.buttonDisable} >Not Helpful</button>
+              <button onClick={this.changeHelpCount} className="helpButton" disabled={this.state.buttonDisable} style={{backgroundColor: this.state.buttonColor}}>Helpful</button><button className="helpButton2" disabled={this.state.buttonDisable}  style={{backgroundColor: this.state.button2Color}} disabled={this.state.buttonDisable} onClick={this.changeNotHelpfulButton}>Not Helpful</button>
             </div>
 
           </div>

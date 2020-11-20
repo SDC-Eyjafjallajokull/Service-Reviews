@@ -64,13 +64,13 @@ export default class Overview extends React.Component {
             <Circle rating={this.props.copyOfState.ratings.gameplay} className='circle'/><text className="text">Gameplay out of 5</text>
           </div>
           <div className='ratings-breakdown-inner'>
-            <Circle rating={this.props.copyOfState.ratings.graphics} className='circle'/><text className="text">Gameplay out of 5</text>
+            <Circle rating={this.props.copyOfState.ratings.graphics} className='circle'/><text className="text">Graphics out of 5</text>
           </div>
           <div className='ratings-breakdown-inner'>
-            <Circle rating={this.props.copyOfState.ratings.sound} className='circle'/><text className="text">Gameplay out of 5</text>
+            <Circle rating={this.props.copyOfState.ratings.sound} className='circle'/><text className="text">Sound out of 5</text>
           </div>
           <div className='ratings-breakdown-inner'>
-            <Circle rating={this.props.copyOfState.ratings.lastingQuality} className='circle'/><text className="text">Gameplay out of 5</text>
+            <Circle rating={this.props.copyOfState.ratings.lastingQuality} className='circle'/><text className="text">Lasting Quality out of 5</text>
           </div>
 
         </div>
