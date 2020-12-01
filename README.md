@@ -1,1 +1,1 @@
-# Service-Reviews
+When you load the application there will be a few bugs in the console. These can be ignored they are related to the packages I used and don't effect the application it's self. Same with the seeding file a few errors appear but the data will still be seeded without any issue.
