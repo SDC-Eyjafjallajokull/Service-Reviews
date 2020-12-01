@@ -14,10 +14,10 @@ server.use(bodyparser.urlencoded({extended: true}));
 server.use(cors());
 server.use(morgan('dev'));
 
-server.get('/api/products/:id', (req, res) => {
-  Product.findOne({_id: req.params.id})
-  .then((product) => {
-    res.status(200).json(product);
+server.get('/api/products', (req, res) => {
+  Product.find({})
+  .then((products) => {
+    res.status(200).json(products);
   })
   .catch((err) => {
     res.status(404).send(err);
