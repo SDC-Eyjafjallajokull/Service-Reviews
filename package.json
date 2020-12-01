@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seed.js",
-    "start": "nodemon server/index.js",
+    "start": "node seed.js && nodemon server/index.js",
     "build": "webpack -w"
   },
   "author": "",

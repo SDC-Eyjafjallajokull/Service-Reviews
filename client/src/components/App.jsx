@@ -30,13 +30,13 @@ export default class App extends React.Component {
 
 
   getReviews() {
-    return axios.get('api/products/5faed4ff9bac92157aba56e2')
+    return axios.get('api/products')
     .then((product) => {
-
+      console.log(product);
       this.setState({
-        product: product.data,
-        reviews: product.data.reviews,
-        ratings: product.data.ratings
+        product: product.data[0],
+        reviews: product.data[0].reviews,
+        ratings: product.data[0].ratings
       });
     })
     .catch((err) => {
@@ -51,7 +51,7 @@ export default class App extends React.Component {
   }
 
   getPercentagesForStars() {
-    var obj = {total: 0}
+    var obj = {total: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
     this.state.reviews.forEach((review) => {
       if (review.stars === 0) {
         console.log(0);

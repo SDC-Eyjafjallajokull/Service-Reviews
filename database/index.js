@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true, useUnifiedTopology: true } )
+mongoose.connect('mongodb://mongodb:27017/reviews', { useNewUrlParser: true, useUnifiedTopology: true } )
 .then(() => {
   console.log('connected to mongo');
-});
+})
+.catch((err) => {
+  console.error(err);
+})
 
 const reviewSchema = new mongoose.Schema({
   product: String,
