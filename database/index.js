@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true, useUnifiedTopology: true } )
-.then(() => {
-  console.log('connected to mongo');
-})
-.catch((err) => {
-  console.error(err);
-})
+// mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true, useUnifiedTopology: true } )
+// .then(() => {
+//   console.log('connected to mongo');
+// })
+// .catch((err) => {
+//   console.error(err);
+// })
 
 const reviewSchema = new mongoose.Schema({
-  product: String,
+  product: {type: String, unique: true},
   reviews: [{
     user: String,
     text: String,
