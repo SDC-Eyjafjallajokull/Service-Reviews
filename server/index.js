@@ -27,8 +27,9 @@ mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true, useUnif
   console.error(err);
 })
 
-server.get('/api/products', (req, res) => {
-  Product.find({})
+// using product as identifier
+server.get('/api/products/:id', (req, res) => {
+  Product.find({ product: req.params.id })
   .then((products) => {
     res.status(200).json(products);
   })
@@ -37,6 +38,7 @@ server.get('/api/products', (req, res) => {
   });
 });
 
+// using reviews._id as identifier
 server.put('/api/products/:id/review', (req, res) => {
   Product.update({"reviews._id": req.params.id}, {"$set": {
     'reviews.$.helpfulCount': req.body.helpfulCount
@@ -49,6 +51,7 @@ server.put('/api/products/:id/review', (req, res) => {
   });
 });
 
+// using _id as identifier
 server.delete('/api/products/:id', (req, res) => {
   Product.findOneAndDelete({ "_id": req.params.id })
     .then((result) => {

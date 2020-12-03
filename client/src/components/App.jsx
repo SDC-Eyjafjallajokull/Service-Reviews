@@ -10,6 +10,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      productName: "Madden21",
       product: {},
       reviews: [],
       ratings: {},
@@ -30,13 +31,13 @@ export default class App extends React.Component {
 
 
   getReviews() {
-    return axios.get('api/products')
-    .then((product) => {
-      console.log(product);
+    return axios.get(`api/products/${this.state.productName}`)
+    .then((result) => {
+      console.log(result);
       this.setState({
-        product: product.data[0],
-        reviews: product.data[0].reviews,
-        ratings: product.data[0].ratings
+        product: result.data[0],
+        reviews: result.data[0].reviews,
+        ratings: result.data[0].ratings
       });
     })
     .catch((err) => {
