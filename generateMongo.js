@@ -109,7 +109,7 @@ const createRandomAmountOfReviews = (number) => {
 // });
 
 let dataStr = '';
-for (let i = 0; i < 1000000; i++) {
+for (let i = 0; i < 100; i++) {
   var productObj = {};
   productObj.product = faker.commerce.productName();
   var randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
@@ -132,7 +132,7 @@ let appendToFile = async (path) => {
     filehandle = await fsp.open(path, mode = 'a');
     for (let j = 1; j < 10; j++) {
       let dataStr = '';
-      for (let i = 0; i < 1000000; i++) {
+      for (let i = 0; i < 100; i++) {
         var productObj = {};
         productObj.product = faker.commerce.productName();
         var randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
