@@ -79,5 +79,6 @@ let appendToFile = async (path) => {
   }
 }
 
+// node --max-old-space-size=4096 generateMongo.js
 
 // mongoimport --db reviews --collection products --drop --file "/Users/yimingchen/Documents/Coding/Hack Reactor/HRLA40/SDC-Service-Reviews/productsMongo.json"
