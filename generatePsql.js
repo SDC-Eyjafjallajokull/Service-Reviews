@@ -15,7 +15,7 @@ var randomDates = [new Date(2018,11,23), new Date(2020, 8, 11), new Date(2020, 6
 
 const createReview = () => {
   var review = [];
-  review.push(names[Math.floor(Math.random() * names.length)]); // reviewer
+  review.push(faker.name.firstName()); // reviewer
   review.push(randomText[Math.floor(Math.random() * randomText.length)]); // text
   review.push(JSON.stringify(randomDates[Math.floor(Math.random() * randomText.length)])); // dateCreated
   review.push(Math.floor(Math.random() * 6)); // star
@@ -55,9 +55,10 @@ let appendToFile = async (path) => {
 
     for (let j = 0; j < 10; j++) {
       let dataStr = '';
-      for (let i = 0; i < 1000000; i++) {
+      let batchSize = 1000000;
+      for (let i = 0; i < batchSize; i++) {
         let reviewsPerProduct = '\n';
-        let product = faker.commerce.productName();
+        let product = `#${j * batchSize + i}`;
         var randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
         reviewsPerProduct += createRandomAmountOfReviews(randomNumber, product);
         dataStr += reviewsPerProduct;
@@ -70,5 +71,7 @@ let appendToFile = async (path) => {
     }
   }
 }
+
+// node --max-old-space-size=4096 generatePsql.js
 
 // \COPY reviews(product, reviewer, text, datecreated, star, summary, helpfulcount, ratingsgameplay, ratingssound, ratingsgraphics, ratingslastingquality, ratingsrecommended) FROM '~/Documents/Coding/Hack Reactor/HRLA40/SDC-Service-Reviews/productsPsql.txt' DELIMITER ',' CSV HEADER;

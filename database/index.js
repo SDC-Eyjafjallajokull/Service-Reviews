@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 // })
 
 const reviewSchema = new mongoose.Schema({
-  product: {type: String, unique: true},
+  product: String,
   reviews: [{
     user: String,
     text: String,

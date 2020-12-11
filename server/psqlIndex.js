@@ -4,15 +4,12 @@ const cors = require('cors');
 const morgan = require('morgan');
 const bodyparser = require('body-parser');
 const path = require('path');
-const Product = require('../database/index.js');
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 
 const server = express();
 
-const port = 3000;
+const port = 3001;
 server.listen(port, () => {
-  console.log('connected to server and listening on port 3000');
+  console.log('connected to server and listening on port 3001');
 });
 server.use(express.static(path.join(__dirname, '../client/dist')));
 server.use(bodyparser.json());
@@ -20,24 +17,34 @@ server.use(bodyparser.urlencoded({extended: true}));
 server.use(cors());
 // server.use(morgan('dev'));
 
-mongoose.connect('mongodb://localhost/product_reviews', { useNewUrlParser: true, useUnifiedTopology: true } )
-.then(() => {
-  console.log('connected to mongo');
-})
-.catch((err) => {
-  console.error(err);
-})
+// connect to db
+const { Client } = require('pg');
+const connectionString = 'postgresql://postgres:manuals@localhost:5432/product_reviews';
+const client = new Client({ connectionString });
+client.connect()
+  .then(() => {
+    console.log('connected to psql');
+  });
 
 // using product as identifier
 server.get('/api/products/:id', (req, res) => {
-  Product.find({ product: `#${req.params.id}` })
-  .then((products) => {
-    res.status(200).json(products);
-  })
-  .catch((err) => {
-    res.status(404).send(err);
-  });
+  client.query('SELECT * FROM reviews WHERE product = $1', [ `#${req.params.id}` ])
+    .then(result => {
+      res.status(200).send(result.rows);
+    })
+    .catch(err => {
+      res.status(404).send(err);
+    });
 });
+// server.get('/api/products/:id', (req, res) => {
+//   Product.find({ product: req.params.id })
+//   .then((products) => {
+//     res.status(200).json(products);
+//   })
+//   .catch((err) => {
+//     res.status(404).send(err);
+//   });
+// });
 
 // using reviews._id as identifier
 server.put('/api/products/:id/review', (req, res) => {

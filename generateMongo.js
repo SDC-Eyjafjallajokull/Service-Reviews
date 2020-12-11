@@ -12,7 +12,7 @@ var randomDates = [new Date(2018,11,23), new Date(2020, 8, 11), new Date(2020, 6
 
 const createReview = () => {
   var review = {};
-  review.user = names[Math.floor(Math.random() * names.length)];
+  review.user = faker.name.firstName();
   review.text = randomText[Math.floor(Math.random() * randomText.length)];
   review.dateCreated = randomDates[Math.floor(Math.random() * randomText.length)];
   review.stars = Math.floor(Math.random() * 6);
@@ -38,17 +38,17 @@ const createRandomAmountOfReviews = (number) => {
 }
 
 
-let dataStr = '';
-for (let i = 0; i < 1000000; i++) {
-  var productObj = {};
-  productObj.product = faker.commerce.productName();
-  var randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
-  var reviews = createRandomAmountOfReviews(randomNumber);
-  productObj.reviews = reviews;
-  dataStr += JSON.stringify(productObj);
-};
+let starterStr = '';
+// for (let i = 0; i < 1000000; i++) {
+//   var productObj = {};
+//   productObj.product = faker.commerce.productName();
+//   var randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+//   var reviews = createRandomAmountOfReviews(randomNumber);
+//   productObj.reviews = reviews;
+//   dataStr += JSON.stringify(productObj);
+// };
 
-fsp.writeFile("productsMongo.json", dataStr)
+fsp.writeFile("productsMongo.json", starterStr)
 .then(() => {
   appendToFile("productsMongo.json");
 })
@@ -60,11 +60,12 @@ let appendToFile = async (path) => {
   let filehandle = null;
   try {
     filehandle = await fsp.open(path, mode = 'a');
-    for (let j = 1; j < 10; j++) {
+    for (let j = 0; j < 10; j++) {
       let dataStr = '';
-      for (let i = 0; i < 1000000; i++) {
+      let batchSize = 1000000;
+      for (let i = 0; i < batchSize; i++) {
         var productObj = {};
-        productObj.product = faker.commerce.productName();
+        productObj.product = `#${j * batchSize + i}`;
         var randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
         var reviews = createRandomAmountOfReviews(randomNumber);
         productObj.reviews = reviews;
@@ -81,4 +82,4 @@ let appendToFile = async (path) => {
 
 // node --max-old-space-size=4096 generateMongo.js
 
-// mongoimport --db reviews --collection products --drop --file "/Users/yimingchen/Documents/Coding/Hack Reactor/HRLA40/SDC-Service-Reviews/productsMongo.json"
+// mongoimport --db product_reviews --collection products --drop --file "/Users/yimingchen/Documents/Coding/Hack Reactor/HRLA40/SDC-Service-Reviews/productsMongo.json"
