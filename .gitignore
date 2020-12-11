@@ -1,3 +1,4 @@
 node_modules
 productsMongo.json
 productsPsql.txt
+newrelic.js
