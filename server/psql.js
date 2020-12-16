@@ -19,11 +19,14 @@ server.use(cors());
 
 // connect to db
 const { Client } = require('pg');
-const connectionString = 'postgresql://postgres:manuals@localhost:5432/product_reviews';
+const connectionString = 'postgresql://ec2-user:manuals@3.101.26.248:5432/product_reviews';
 const client = new Client({ connectionString });
 client.connect()
   .then(() => {
     console.log('connected to psql');
+  })
+  .catch((err) => {
+    console.error(err);
   });
 
 // using product as identifier

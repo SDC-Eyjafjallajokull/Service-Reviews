@@ -75,3 +75,9 @@ let appendToFile = async (path) => {
 // node --max-old-space-size=4096 generatePsql.js
 
 // \COPY reviews(product, reviewer, text, datecreated, star, summary, helpfulcount, ratingsgameplay, ratingssound, ratingsgraphics, ratingslastingquality, ratingsrecommended) FROM '~/Documents/Coding/Hack Reactor/HRLA40/SDC-Service-Reviews/productsPsql.txt' DELIMITER ',' CSV HEADER;
+
+
+// EC2 commands
+
+// \COPY reviews(product, reviewer, text, datecreated, star, summary, helpfulcount, ratingsgameplay, ratingssound, ratingsgraphics, ratingslastingquality, ratingsrecommended) FROM '/home/ec2-user/Service-Reviews/productsPsql.txt' DELIMITER ',' CSV HEADER;
+// \COPY reviews(product, reviewer, text, datecreated, star, summary, helpfulcount, ratingsgameplay, ratingssound, ratingsgraphics, ratingslastingquality, ratingsrecommended) FROM '/home/ec2-user/productsPsql.txt' DELIMITER ',' CSV HEADER;
